@@ -1,0 +1,13 @@
+.activity-list {
+    padding-left: 10px;
+  }
+  
+  .activity-label {
+    flex-grow: 1;
+    text-align: left;
+  }
+  
+  .activity-checkbox {
+    flex-shrink: 0;
+  }
+  

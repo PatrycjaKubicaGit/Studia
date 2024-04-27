@@ -1,0 +1,18 @@
+.Menu {
+    background-color: white;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid black;
+    padding: 5px;
+  }
+  .lista {
+    background-color: white;
+    padding: 5px;
+  }
+  
+  h4 {
+    font-size: 0.8em;
+    color: black;
+  }
