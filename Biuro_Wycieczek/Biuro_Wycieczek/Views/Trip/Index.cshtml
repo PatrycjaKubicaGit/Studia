@@ -1,0 +1,103 @@
+﻿@model Biuro_Wycieczek.ViewModelPages.TripsViewModelPages
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Wycieczki</h2>
+<p>
+    @Html.ActionLink("Add Wycieczka", "AddTrip")
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Trips.First().Country)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Trips.First().Description)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Trips.First().DayCount)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Trips.First().DepatureDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Trips.First().Cost)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Trips.First().DepaturePlace)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Trips.First().FoodModel)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Trips.First().Transort)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Trips)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Country)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Description)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DayCount)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DepatureDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Cost)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DepatureDate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.FoodModel)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Transort)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "EditTrip", new { TripId = item.TripsId }) |
+                    @Html.ActionLink("Delete", "DeleteTrip", new { TripId = item.TripsId })
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+<div>
+    Strona @(Model.CurrentPage) z @((int)Math.Ceiling((double)Model.TotalTrips / Model.PageSize))
+</div>
+
+<div>
+    @if (Model.CurrentPage > 1)
+    {
+        <a asp-action="Index" asp-controller="Trip" asp-route-page="@(Model.CurrentPage - 1)" asp-route-pageSize="@Model.PageSize">Poprzednia strona</a>
+    }
+
+    @if (Model.CurrentPage < (int)Math.Ceiling((double)Model.TotalTrips / Model.PageSize))
+    {
+        <a asp-action="Index" asp-controller="Trip" asp-route-page="@(Model.CurrentPage + 1)" asp-route-pageSize="@Model.PageSize">Następna strona</a>
+    }
+</div>
+
+<div>
+    <form asp-action="Index" asp-controller="Trip" method="get">
+        <label for="pageSize">Wycieczki na stronę:</label>
+        <select id="pageSize" name="pageSize">
+            <option value="5">5</option>
+            <option value="10">10</option>
+            <option value="20">20</option>
+        </select>
+        <input type="submit" value="Zastosuj" />
+    </form>
+</div>

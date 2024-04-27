@@ -1,0 +1,61 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Biuro_Wycieczek</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/Biuro_Wycieczek.styles.css" asp-append-version="true" />
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+            <div class="container-fluid">
+                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index"> <img src="data:image/png;base64,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" alt="logo" style="width: 60px; height: auto;" />Biuro Wycieczek UBB</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                    <ul class="navbar-nav flex-grow-1">
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Trip" asp-action="Index">Wycieczka</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Reservation" asp-action="Index">Rezerwacja</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Client" asp-action="Index">Klient</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Place" asp-action="Index">Miejsce pobytu</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Guide" asp-action="Index">Przewodnik</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="border-top footer text-muted">
+        <div class="container">
+            &copy; 2024 - Biuro Wycieczek UBB - Adres: ul. Przykładowa 123, 00-000 Warszawa - Telefon: +48 111 111 111 - Email: info@biurowycieczekubb.pl
+        </div>
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

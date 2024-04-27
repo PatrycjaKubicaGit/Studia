@@ -1,0 +1,91 @@
+﻿@model Biuro_Wycieczek.ViewModels.PlaceViewModel
+@{
+    ViewBag.Title = "DeleteTrip";
+}
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    @using (Html.BeginForm("Delete", "Trip", FormMethod.Post))
+    {
+        @Html.HiddenFor(r => r.PLaceId)
+        <h4>Delete Miejsce Pobytu</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.PLaceId)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.PLaceId)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Name)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Name)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Type)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Type)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.DistanceFromSea)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.DistanceFromSea)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Pool)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Pool)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Carpark)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Carpark)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.City)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.City)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Street)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Street)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.LocalNumber)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.LocalNumber)
+            </dd>
+        </dl>
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to Miejsce Pobytu List", "Index")
+        </div>
+    }
+</div>

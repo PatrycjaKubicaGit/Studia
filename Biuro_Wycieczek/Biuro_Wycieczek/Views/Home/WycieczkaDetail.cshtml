@@ -1,0 +1,23 @@
+﻿@using Biuro_Wycieczek.ViewModels;
+@model TripViewModel
+
+
+<div class="row">
+    <div class="col-md-6" style="display: flex; justify-content: center; align-items: center;">
+        <div>
+            <p>Destynacja: @Model.Country</p>
+            <p>Ilość dni: @Model.DayCount</p>
+            <p>Koszt od osoby: @Model.Cost</p>
+            <p>Miejsce Zbiórki: @Model.DepaturePlace</p>
+            <p>Wyżywienie*: @Model.FoodModel</p>
+            <p>Transport: @Model.Transort</p>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <img src="https://um.warszawa.pl/documents/39703/7003459/ul._krakowskie_przedmiescie_noca_fot._waldemar_panow_pzstudio.pl_.jpg/6c7d834d-e34d-7ec7-7132-e382a8dcf824?version=1.0&t=1618923965970&imagePreview=1" alt="Miasto" class="img-fluid">
+    </div>
+</div>
+<br />
+<br />
+
+<p>*BB (samo śniadanie), HB ( śniadanie i obiadokolacja), FB (pełne wyżywienie), AI (all inclusive) </p>

@@ -1,0 +1,57 @@
+﻿@model Biuro_Wycieczek.ViewModels.ClientViewModel
+
+@{
+    ViewBag.Title = "Usuń Klienta";
+}
+
+<h3>Czy na pewno chcesz usunąć tego klienta?</h3>
+<div>
+    @using (Html.BeginForm("Delete", "Klient", FormMethod.Post))
+    {
+        @Html.HiddenFor(k => k.ClientId)
+        <h4>Usuń Klienta</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.ClientId)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.ClientId)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.FirstName)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.FirstName)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.LastName)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.LastName)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Contact)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Contact)
+            </dd>
+        </dl>
+        <div class="form-actions no-color">
+            <input type="submit" value="Usuń" class="btn btn-default" /> |
+            @Html.ActionLink("Powrót do listy klientów", "Index")
+        </div>
+    }
+</div>
+
+@section Scripts {
+    <script src="~/lib/jquery-validation/jquery.validate.min.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+}

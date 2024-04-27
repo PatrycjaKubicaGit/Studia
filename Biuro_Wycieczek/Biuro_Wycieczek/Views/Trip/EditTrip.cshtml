@@ -1,0 +1,91 @@
+﻿@model Biuro_Wycieczek.ViewModels.TripViewModel
+@{
+    ViewBag.Title = "EditWycieczka";
+}
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <h4>Edit Wycieczka</h4>
+        <hr />
+        @Html.ValidationSummary(true)
+        @Html.HiddenFor(model => model.TripId)
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Country, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Country)
+                @Html.ValidationMessageFor(model => model.Country)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Destription, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Destription)
+                @Html.ValidationMessageFor(model => model.Destription)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.DayCount, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.DayCount)
+                @Html.ValidationMessageFor(model => model.DayCount)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.DepatureDate, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.DepatureDate)
+                @Html.ValidationMessageFor(model => model.DepatureDate)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Cost, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Cost)
+                @Html.ValidationMessageFor(model => model.Cost)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.DepaturePlace, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.DepaturePlace)
+                @Html.ValidationMessageFor(model => model.DepaturePlace)
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(model => model.FoodModel, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownListFor(model => model.FoodModel, Enum.GetValues(typeof(FoodModel)).Cast<FoodModel>().Select(e => new SelectListItem { Text = Enum.GetName(typeof(FoodModel), e), Value = e.ToString() }), "Wybierz...", new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.FoodModel)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Transort, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownListFor(model => model.Transort, Enum.GetValues(typeof(TransportModel)).Cast<TransportModel>().Select(e => new SelectListItem { Text = Enum.GetName(typeof(TransportModel), e), Value = e.ToString() }), "Wybierz...", new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.Transort)
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Update" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to Wycieczka List", "Index")
+</div>
+
+

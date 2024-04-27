@@ -1,0 +1,36 @@
+﻿@using Biuro_Wycieczek.ViewModels
+@model IEnumerable<TripViewModel>
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h2 class="display-3">Oferty na wakacje</h2>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <img src="https://archistacja.pl/wp-content/uploads/2022/07/pi%C4%99kne-w%C5%82oskie-miasta-6.jpg" alt="Zdjęcie" class="img-fluid">
+        </div>
+        <div class="col-md-6" style="display: flex; justify-content: center; align-items: center;">
+            <div class="text-left">
+                <p>Odkryj najpiękniejsze kierunki i zobacz, jakie oferty dla Ciebie przygotowaliśmy. Od bajecznych plaż po skaliste wybrzeża i urokliwe miasteczka, znajdziesz tu wszystko, czego dusza zapragnie. Przygoda czeka!</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<br />
+<!--Lab2-->
+<h4>Aktualne wycieczki</h4>
+<ul>
+    @foreach (var wycieczka in @Model)
+    {
+        <li>
+            <a asp-action="WycieczkaDetail" asp-Controller="Home" asp-route-id="@wycieczka.TripId">@wycieczka.Country - @wycieczka.DepatureDate </a>
+
+        </li>
+    }
+</ul>
+
+<!--lab3-->
