@@ -1,0 +1,95 @@
+﻿@using TourAgency.ViewModels
+@model IEnumerable<TripViewModel>
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+@{
+    if (User.Identity.IsAuthenticated)
+    {
+        if (User.IsInRole("Admin"))
+        {
+            <div class="text-center">
+                <h3 class="display-5">Konto administracyjne</h3>
+            </div>
+        }
+        else if (User.IsInRole("Manager"))
+        {
+            <div class="text-center">
+                <h3 class="display-5">Konto managerskie</h3>
+            </div>
+        }
+    }
+}
+
+
+<br />
+
+<div class="container px-4 px-lg-5">
+
+    <div class="row gx-4 gx-lg-5 align-items-center my-5">
+        <div class="col-lg-7"><img class="img-fluid rounded mb-4 mb-lg-0" src="https://archistacja.pl/wp-content/uploads/2022/07/pi%C4%99kne-w%C5%82oskie-miasta-6.jpg" alt="..." /></div>
+        <div class="col-lg-5">
+            <h1 class="font-weight-light">UBB Wycieczki</h1>
+            <p>Odkryj najpiękniejsze kierunki i zobacz, jakie oferty dla Ciebie przygotowaliśmy. Od bajecznych plaż po skaliste wybrzeża i urokliwe miasteczka, znajdziesz tu wszystko, czego dusza zapragnie. Przygoda czeka!</p>
+        </div>
+    </div>
+ 
+    <div class="row">
+        <div class="col">
+            <h2>Oferty wakacyjne</h2>
+        </div>
+        <div class="col-md-3 ml-auto">
+            <form class="d-flex">
+                <div class="input-group">
+                    <input type="text" class="form-control bg-light border-0 small" id="searchInput" placeholder="Wyszukaj"
+                           aria-label="Search" aria-describedby="basic-addon2">
+                    <div class="input-group-append">
+                        <button class="btn btn-primary" type="button" id="searchButton">
+                            <i class="fas fa-search fa-sm"></i>
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <hr class="divider">
+
+   
+    <div class="row gx-4 gx-lg-5" id="tripCards">
+        @foreach (var trip in Model)
+        {
+            <div class="col-md-4 mb-5 trip-card">
+                <div class="card h-100" id="cardS">
+                    <div class="card-body">
+                        <h2 class="card-title">@trip.Country, @trip.Place.City</h2>
+                        <p class="card-text">@trip.Description</p>
+                    </div>
+                    <div class="card-footer d-flex justify-content-center" id="moreInfo">
+                        <a class="btn btn-primary btn-sm" id="moreInfoButton" href="@Url.Action("TripsDetail", "Home", new { id = trip.TripsId })">Więcej informacji</a>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+   
+</div>
+
+@section Scripts{
+<script>
+    document.getElementById('searchInput').addEventListener('input', function () {
+        let filter = this.value.toLowerCase();
+        let cards = document.querySelectorAll('.trip-card');
+
+        cards.forEach(function (card) {
+            let title = card.querySelector('.card-title').innerText.toLowerCase();
+            if (title.includes(filter)) {
+                card.style.display = "";
+            } else {
+                card.style.display = "none";
+            }
+        });
+    });
+</script>
+}

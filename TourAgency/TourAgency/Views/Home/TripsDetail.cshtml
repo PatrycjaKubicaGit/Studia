@@ -1,0 +1,45 @@
+﻿@using TourAgency.ViewModels;
+@model TripViewModel
+
+
+<div class="row">
+   
+    <div class="col-12">
+        <h1 class="text-left">@Model.Place.Name</h1>
+    </div>
+</div>
+<br />
+
+    <div class="row">
+        <div class="col-md-6">
+            <div class="info-item">
+                <p><span>Kraj:</span> @Model.Country</p>
+                <p><span>Ilość dni:</span> @Model.DayCount</p>
+                <p><span>Koszt od osoby:</span> @Model.Cost</p>
+                <p><span>Miejsce Zbiórki:</span> @Model.DepaturePlace</p>
+                <p><span>Wyżywienie*:</span> @Model.FoodModel</p>
+                <p><span>Transport:</span> @Model.Transort</p>
+                <p><br /></p>
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="info-item">
+                <p><span>Typ:</span> @Model.Place.Type</p>
+                <p><span>Odległość od morza:</span> @Model.Place.DistanceFromSea</p>
+                <p><span>Basen:</span> @(Model.Place.Pool ? "Tak" : "Nie")</p>
+                <p><span>Parking:</span> @(Model.Place.Carpark ? "Tak" : "Nie")</p>
+                <p><span>Miasto:</span> @Model.Place.City</p>
+                <p><span>Ulica:</span> @Model.Place.Street</p>
+                <p><span>Numer Lokalu:</span> @Model.Place.LocalNumber</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+   
+<br />
+<br />
+
+<p>*BB (samo śniadanie), HB ( śniadanie i obiadokolacja), FB (pełne wyżywienie), AI (all inclusive) </p>

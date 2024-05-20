@@ -1,0 +1,65 @@
+﻿@model TourAgency.ViewModels.GuideViewModel
+
+@{
+    ViewBag.Title = "Usuń Przewodnika";
+}
+
+<h3>Czy na pewno chcesz usunąć tego przewodnika?</h3>
+<div>
+    @using (Html.BeginForm("Delete", "Przewodnik", FormMethod.Post))
+    {
+        @Html.HiddenFor(p => p.GuideId)
+        <h4>Usuń Przewodnika</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.GuideId)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.GuideId)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.FirstName)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.FirstName)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.LastName)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.LastName)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Specialization)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Specialization)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Contact)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Contact)
+            </dd>
+        </dl>
+        <div class="form-actions no-color">
+            <input type="submit" value="Usuń" class="btn btn-default" /> |
+            @Html.ActionLink("Powrót do listy przewodników", "Index")
+        </div>
+    }
+</div>
+
+@section Scripts {
+    <script src="~/lib/jquery-validation/jquery.validate.min.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+}

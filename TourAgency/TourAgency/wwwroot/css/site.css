@@ -1,0 +1,100 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+    margin-bottom: 60px;
+    color: #0c0c0e;
+    background-color: #F6E9B2;
+}
+
+
+.table {
+    width: 100%;
+    margin-bottom: 1rem;
+    color: #0c0c0e;
+}
+
+.headerS {
+    background-color: #F3CA52;
+}
+
+header .nav-link {
+    color: #4E342E;
+}
+    header .nav-link:hover {
+        color: #000000;
+    }
+
+.footerS {
+    background-color: #7ABA78;
+    color: #F6E9B2;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+#searchButton {
+    background-color: #4E342E;
+    border-color: #4E342E;
+}
+
+#cardS {
+    border-color: #7ABA78;
+    border-width: 3px;
+    background-color: #Fff;
+}
+
+#moreInfo {
+    background-color: #7ABA78;
+    border-color: #7ABA78;
+}
+
+
+#moreInfoButton {
+    background-color: #0A6847;
+    color: #F6E9B2;
+    border-color: #7ABA78;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    transition: background-color 0.3s ease;
+}
+    #moreInfoButton:hover {
+        background-color: #0f2b14;
+    }
+
+.info-item {
+    background-color: white;
+    border-top: 3px solid #7ABA78;
+    border-bottom: 3px solid #7ABA78;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+    .info-item p {
+        margin: 10px;
+        border-top: 1px solid #7ABA78;
+        padding-top:10px;
+    }
+
+        .info-item p span {
+            font-weight: bold;
+        }
+
+.custom-list {
+    background-color: #333; 
+    color: #fff; 
+}
+
+.nav-admin {
+    color: white;
+}    
+

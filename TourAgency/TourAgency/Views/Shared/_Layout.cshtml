@@ -1,0 +1,136 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - TourAgency</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/TourAgency.styles.css" asp-append-version="true" />
+    <link href="~/css/sb-admin-2.css" rel="stylesheet">
+    <link href="~/lib/fontawesome-free/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm border-bottom box-shadow mb-3 headerS">
+            <div class="container-fluid">
+                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">
+                    <img src="~/pictures/logoTourAgency.png" alt="TourAgency Logo" style="max-height: 40px;">
+                    UBB Wycieczki
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                    <ul class="navbar-nav flex-grow-1">
+                        <li class="nav-item">
+                            <a class="nav-link " asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link " asp-area="" asp-controller="Trip" asp-action="Index">Wycieczka</a>
+                        </li>
+                        @if (User.IsInRole("Admin") || User.IsInRole("Manager"))
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link " asp-area="" asp-controller="Reservation" asp-action="Index">Rezerwacja</a>
+                            </li>
+
+                            <li class="nav-item">
+                                <a class="nav-link " asp-area="" asp-controller="Client" asp-action="Index">Klient</a>
+                            </li>
+                        }
+                        <li class="nav-item">
+                            <a class="nav-link " asp-area="" asp-controller="Place" asp-action="Index">Miejsce pobytu</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link " asp-area="" asp-controller="Guide" asp-action="Index">Przewodnik</a>
+                        </li>
+                         @if (User.IsInRole("Admin"))
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link " asp-area="" asp-controller="Home" asp-action="Admin">Admin</a>
+                            </li>
+                        }
+                    </ul>
+                   
+                    <partial name="_LoginPartial" />
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="text-center text-lg-start bg-body-tertiary footerS">
+
+        <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom ">
+
+            <div class="me-5 d-none d-lg-block">
+                <span>Dołącz do naszych social media:</span>
+            </div>
+
+            <div>
+                <a href="" class="me-4 text-reset">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="" class="me-4 text-reset">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                <a href="" class="me-4 text-reset">
+                    <i class="fab fa-google"></i>
+                </a>
+                <a href="" class="me-4 text-reset">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="" class="me-4 text-reset">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="" class="me-4 text-reset">
+                    <i class="fab fa-github"></i>
+                </a>
+            </div>
+        </section>
+
+        <section class="">
+            <div class="container text-center text-md-start mt-5">
+
+                <div class="row mt-3">
+
+                    <div class="col-md-6 col-lg-6 col-xl-6 mx-auto mb-4">
+
+                        <h6 class="text-uppercase fw-bold mb-4">
+                            <i class="fas fa-gem me-3"></i>UBB wycieczki
+                        </h6>
+                        <p>
+                            Witamy w naszym biurze podróży, gdzie Twoje marzenia o idealnych wakacjach stają się rzeczywistością. Dzięki współpracy z najlepszymi przewoźnikami i hotelami gwarantujemy najwyższy standard usług oraz bezpieczeństwo. Nasz profesjonalny zespół, pełen pasji i doświadczenia, służy pomocą na każdym etapie planowania wyjazdu, dbając o każdy szczegół. Nasza bogata oferta obejmuje wycieczki rodzinne, romantyczne wypady, a także ekskluzywne podróże szyte na miarę. Zapraszamy do skorzystania z naszych usług i spełnienia podróżniczych marzeń z nami.
+                        </p>
+                    </div>
+
+                    <div class="col-md-6 col-lg-6 col-xl-6 mx-auto mb-md-0 mb-4">
+                        <h6 class="text-uppercase fw-bold mb-4">Contact</h6>
+                        <p><i class="fas fa-home me-3"></i> New York, NY 10012, US</p>
+                        <p>
+                            <i class="fas fa-envelope me-3"></i>
+                            info@example.com
+                        </p>
+                        <p><i class="fas fa-phone me-3"></i> + 01 234 567 88</p>
+                        <p><i class="fas fa-print me-3"></i> + 01 234 567 89</p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+    </footer>
+
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
