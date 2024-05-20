@@ -1,0 +1,399 @@
+@font-face {
+    font-family:Archivo;
+    @import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Archivo:wght@100&display=swap');
+    font-family:ArchivoBlack;
+    src: url("font/ArchivoBlack.ttf");
+}
+
+body{
+    background-color: #121214;
+    font-family:Archivo;
+    color: #ffffff;
+}
+header{
+    background: #ffffff;
+    width: 100%;
+
+   
+
+}
+#Tekst_glowny{
+    margin-top:200px;
+}
+
+.navbar-brand{
+    font-family:ArchivoBlack;
+    font-size: 20px;  
+}
+#opcja {
+
+    font-family:ArchivoBlack;
+    text-align: center;
+    color:#121214;
+    text-decoration: none;
+    transition: 0.3s;
+    font-size: 20px;
+    margin-right: 5px;
+    
+}
+
+#opcja:hover{
+      color: #FFA112;
+}
+
+#Tekst_glowny{
+    height: 800px;
+    margin-top: 100px;
+    height:960px;
+    margin:0px;
+    padding:50px;
+    background-color: #121212;
+    background-image: url(zdjecia/papuga.jpg);
+    background-repeat: no-repeat;
+    background-position: right;
+
+}
+.main{
+    align-items: center;
+    padding: 10%;
+    padding-right:20%;
+    
+   
+}
+.przycisk{
+    margin-top: 40px;
+    float:center;
+}
+
+
+.tytul{
+
+font-family: ArchivoBlack;
+font-style: normal;
+font-weight: normal;
+font-size: 42px;
+line-height: 46px;
+margin-bottom: 40px;
+
+color: #FFFFFF;
+}
+
+.tekst_tytulowy p{
+
+font-family: ArchivoBlack;
+font-style: normal;
+font-weight: normal;
+font-size: 18px;
+line-height: 29px;
+/* or 161% */
+
+
+color: #FFFFFF;
+}
+/*Treści ze zdjeciami */
+#pierwszy_tekstzdj{
+width: 100%;
+
+}
+
+#drugi_tekstzdj{
+
+width: 100%;
+margin-top:346px;
+
+
+}
+
+
+#trzeci_tekstzdj{
+margin-top:346px;
+width: 100%;
+
+
+
+}
+
+.zdjecielewe{
+
+margin-top:173px;
+
+
+}
+
+
+.zdjecieprawe{
+
+margin-top:173px;
+
+
+}
+
+.prawyt{
+
+    padding:10%;
+    margin-top:173px;
+
+}
+
+.lewyt{
+    margin-top:173px;
+    padding:10%;
+}
+
+
+.podtytulprawy{
+
+margin-bottom: 40px;
+font-family: ArchivoBlack;
+font-style: normal;
+font-weight: normal;
+font-size: 42px;
+line-height: 46px;
+
+color: #FFFFFF;
+
+}
+
+.podtytullewy{
+
+margin-bottom: 40px;
+font-family: ArchivoBlack;
+font-style: normal;
+font-weight: normal;
+font-size: 42px;
+line-height: 46px;
+text-align: right;
+
+color: #FFFFFF;
+}
+
+.tekstprawy{
+margin-bottom: 40px;
+font-family: ArchivoBlack;
+font-style: normal;
+font-weight: normal;
+font-size: 18px;
+line-height: 29px;
+/* or 161% */
+
+
+color: #FFFFFF;
+
+}
+
+.tekstlewy{
+
+margin-bottom: 40px;
+font-family: ArchivoBlack;
+font-style: normal;
+font-weight: normal;
+font-size: 18px;
+line-height: 29px;
+/* or 161% */
+
+text-align: right;
+
+color: #FFFFFF;
+
+}
+
+
+.button{
+width: 251px;
+height: 75px;
+
+
+font-family: ArchivoBlack;
+font-style: normal;
+font-weight: normal;
+font-size: 18px;
+line-height: 20px;
+display: flex;
+align-items: center;
+text-align: center;
+justify-content: center;
+background: #FFAA29;
+border-radius: 10px;
+color: #121214;
+transition: 0.3s;
+}
+
+.button:hover{
+ color: #FFFFFF;
+ background: #023387;
+}
+
+.przycisklewy{
+    float:right;
+}
+
+
+.Opinie{
+
+    margin-top:346px;
+    width:100%;
+
+
+}
+
+.tytul_opinie{
+width: 100%;
+padding:50px;
+font-family: ArchivoBlack;
+font-style: normal;
+font-weight: normal;
+font-size: 42px;
+line-height: 46px;
+}
+
+.Tlo_opinie{
+    background-color: #023387;
+    padding:10px;
+}
+
+
+/*stopka */
+.stopka{
+    background-color: #ffffff;
+    color:#121214;
+    font-family: Archivo;
+    margin:0;
+    padding:0;
+    margin-top: 173px;
+
+}
+
+.Stopkatytyl{
+font-family: Archivo;
+font-style: normal;
+font-weight: normal;
+font-size: 35px;
+line-height: 38px;
+}
+
+.Stopkatekst{
+font-style: normal;
+font-weight: normal;
+font-size: 18px;
+line-height: 29px;
+}
+
+
+.stopka hr{
+    border: 2px solid #121214;
+}
+
+.colstopka{
+    padding: 10%;
+    background-color: #ffffff;
+}
+
+
+
+.ikony{
+    text-align: center;
+
+}
+
+.ikony > svg{
+    transition: 0.3s;
+    margin-right: 40px;
+
+}
+.ikony > svg:hover{
+    fill:#FFA112;
+}
+.col{
+    align-items: center;
+}
+footer{
+    background-color: #ffffff;
+}
+.stopka  li{
+    margin-top: 5%;
+    
+}
+
+/* Opinie karuzela */
+
+ 
+
+.zdiecieOpinie{
+    width:100px;
+    border-radius: 40px;
+    border: solid 2px #023387;
+}
+
+.card{
+    background-color: #121214;
+    margin:2%;
+    height: 300px;
+    width: 100%;
+}
+
+.platnosc{
+    height:60px;
+    margin-left:5px;
+    margin-right: 5px;;
+}
+#metody{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+
+/* Responyswnosc */
+@media (max-width: 1000px) and (min-width: 300px) {
+    .zdjecielewe{
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 75%;
+    }
+    .zdjecieprawe{
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 75%;
+    }
+    .tekstlewy{
+        text-align: center;
+        font-size: 12px;
+
+    }
+    .tekstprawy{
+        text-align: center;
+        font-size: 12px;
+    }
+    .podtytullewy{
+            text-align: center;
+            font-size: 18px;
+        }
+        .podtytulprawy{
+            text-align: center;
+            font-size: 18px;
+        }
+    .przycisklewy{
+            margin-left: 50%;
+            margin-right:40%;
+           
+        }
+    .button{
+            margin-left: 25%;
+            margin-right:25%;
+        }
+    .prawyt{
+            text-align: center;
+            font-size: 12px;
+        }
+    .lewyt{
+            text-align: center;
+            font-size: 12px;
+    }
+    .button{
+        width: 139px;
+        height: 41px;
+        font-size: 12px;
+    }
+}
