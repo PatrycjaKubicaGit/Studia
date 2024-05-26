@@ -1,15 +1,17 @@
 /*header*/
-
+.navbar{
+    background-color: FFFBF5 !important;
+}
 
 .navbar-nav .nav-link {
     font-size: 18px; 
     transition: color 0.3s; 
     font-weight: bold;
-    color: rgb(51, 1, 75) !important;
+    color: #1F2544 !important;
   }
 
   .navbar-nav .nav-link:hover {
-    color: rgb(177, 163, 252) !important;
+    color: #7743DB !important;
   }
 
 /*stopka */
