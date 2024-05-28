@@ -1,0 +1,118 @@
+﻿@model NBD_SystemZarządzaniaBiblioteką.Models.Book
+
+@{
+    ViewData["Title"] = "Edytuj książkę";
+}
+
+<h2>Edytuj książkę</h2>
+
+<form asp-action="EditBooks" method="post">
+    <input type="hidden" asp-for="Id" />
+
+    <div class="form-group">
+        <label for="Title">Tytuł</label>
+        <input type="text" class="form-control" id="Title" asp-for="Title" required />
+    </div>
+
+    <div class="form-group">
+        <label for="Author_Name">Imię autora</label>
+        <input type="text" class="form-control" id="Author_Name" asp-for="Author.Name" required />
+    </div>
+
+    <div class="form-group">
+        <label for="Author_Bio">Biografia autora</label>
+        <textarea class="form-control" id="Author_Bio" asp-for="Author.Bio" required></textarea>
+    </div>
+
+    <div class="form-group">
+        <label for="Copies">Egzemplarze</label>
+        <table class="table" id="CopiesTable">
+            <thead>
+                <tr>
+                    <th>Wydanie</th>
+                    <th>Rok</th>
+                    <th>Wydawca</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @for (int i = 0; i < Model.Copies.Count; i++)
+                {
+                    <tr>
+                        <td><input type="text" class="form-control" asp-for="Copies[i].Edition" required /></td>
+                        <td><input type="number" class="form-control" asp-for="Copies[i].Year" required /></td>
+                        <td><input type="text" class="form-control" asp-for="Copies[i].Publisher" required /></td>
+                        <td><button type="button" class="btn btn-danger" onclick="removeRow(this)">Usuń</button></td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+        <button type="button" class="btn btn-primary" onclick="addCopyRow()">Dodaj egzemplarz</button>
+    </div>
+
+    <div class="form-group">
+        <label for="Reviews">Recenzje</label>
+        <table class="table" id="ReviewsTable">
+            <thead>
+                <tr>
+                    <th>Recenzent</th>
+                    <th>Ocena</th>
+                    <th>Komentarz</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @for (int i = 0; i < Model.Reviews.Count; i++)
+                {
+                    <tr>
+                        <td><input type="text" class="form-control" asp-for="Reviews[i].Reviewer" required /></td>
+                        <td><input type="number" class="form-control" asp-for="Reviews[i].Rating" required /></td>
+                        <td><textarea class="form-control" asp-for="Reviews[i].Comment" required></textarea></td>
+                        <td><button type="button" class="btn btn-danger" onclick="removeRow(this)">Usuń</button></td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+        <button type="button" class="btn btn-primary" onclick="addReviewRow()">Dodaj recenzję</button>
+    </div>
+
+    <div class="form-group">
+        <label for="NumberOfCopies">Ilość egzemplarzy</label>
+        <input type="number" class="form-control" id="NumberOfCopies" asp-for="NumberOfCopies" required />
+    </div>
+
+    <button type="submit" class="btn btn-success">Zapisz zmiany</button>
+</form>
+
+@section Scripts {
+    <script>
+        function addCopyRow() {
+            var table = document.getElementById("CopiesTable").getElementsByTagName('tbody')[0];
+            var rowCount = table.rows.length;
+            var row = table.insertRow(rowCount);
+            row.innerHTML = `
+                        <td><input type="text" class="form-control" name="Copies[${rowCount}].Edition" required /></td>
+                        <td><input type="number" class="form-control" name="Copies[${rowCount}].Year" required /></td>
+                        <td><input type="text" class="form-control" name="Copies[${rowCount}].Publisher" required /></td>
+                        <td><button type="button" class="btn btn-danger" onclick="removeRow(this)">Usuń</button></td>
+                    `;
+        }
+
+        function addReviewRow() {
+            var table = document.getElementById("ReviewsTable").getElementsByTagName('tbody')[0];
+            var rowCount = table.rows.length;
+            var row = table.insertRow(rowCount);
+            row.innerHTML = `
+                        <td><input type="text" class="form-control" name="Reviews[${rowCount}].Reviewer" required /></td>
+                        <td><input type="number" class="form-control" name="Reviews[${rowCount}].Rating" required /></td>
+                        <td><textarea class="form-control" name="Reviews[${rowCount}].Comment" required></textarea></td>
+                        <td><button type="button" class="btn btn-danger" onclick="removeRow(this)">Usuń</button></td>
+                    `;
+        }
+
+        function removeRow(button) {
+            var row = button.parentNode.parentNode;
+            row.parentNode.removeChild(row);
+        }
+    </script>
+}

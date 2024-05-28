@@ -1,0 +1,55 @@
+﻿@model IEnumerable<Book>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h2>Books</h2>
+
+<a asp-action="AddBooks" class="btn btn-primary mb-3">Dodaj książkę</a>
+<table class="table">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Tytuł</th>
+            <th>Imię autora</th>
+            <th>Biografia autora</th>
+            <th>Egzemplarze</th>
+            <th>Recenzje</th>
+            <th>Ilość egzemplarzy</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var book in Model)
+        {
+            <tr>
+                <td>@book.Id</td>
+                <td>@book.Title</td>
+                <td>@book.Author.Name</td>
+                <td>@book.Author.Bio</td>
+                <td>
+                    <ul>
+                        @foreach (var copy in book.Copies)
+                        {
+                            <li>Wydanie: @copy.Edition, Rok: @copy.Year, Wydawca: @copy.Publisher</li>
+                        }
+                    </ul>
+                </td>
+                <td>
+                    <ul>
+                        @foreach (var review in book.Reviews)
+                        {
+                            <li>Recenzent: @review.Reviewer, Ocena: @review.Rating, Komentarz: @review.Comment</li>
+                        }
+                    </ul>
+                </td>
+                <td>@book.NumberOfCopies</td>
+                <td>
+                    <a asp-action="EditBooks" asp-route-id="@book.Id">Edytuj</a> |
+                    <a asp-action="DeleteBooks" asp-route-id="@book.Id">Usuń</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
